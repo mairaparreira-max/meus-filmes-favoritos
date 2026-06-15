@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo Mundo Odeia o Chris — Episódios</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">▶</span>
+        <span class="logo-text">ChrisTV</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#" class="nav-item active">Início</a>
+        <a href="#temporadas" class="nav-item">Temporadas</a>
+        <a href="#sobre" class="nav-item">Sobre</a>
+      </nav>
+
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Pesquisar episódio..." />
+        <button onclick="filterEpisodes()">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO BANNER ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Todo Mundo Odeia o Chris</h1>
+      <p>A série autobiográfica de Chris Rock sobre crescer no Brooklyn dos anos 80. Ria, chore e se identifique com cada episódio.</p>
+      <div class="hero-badges">
+        <span class="badge">4 Temporadas</span>
+        <span class="badge">88 Episódios</span>
+        <span class="badge">2005 – 2009</span>
+        <span class="badge rating">⭐ 8.1 / 10</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FILTROS DE TEMPORADA ===== -->
+  <section class="filter-section" id="temporadas">
+    <div class="container">
+      <h2 class="section-title">Episódios por Temporada</h2>
+      <div class="season-filters">
+        <button class="filter-btn active" onclick="filterBySeason('all', this)">Todas</button>
+        <button class="filter-btn" onclick="filterBySeason('1', this)">Temporada 1</button>
+        <button class="filter-btn" onclick="filterBySeason('2', this)">Temporada 2</button>
+        <button class="filter-btn" onclick="filterBySeason('3', this)">Temporada 3</button>
+        <button class="filter-btn" onclick="filterBySeason('4', this)">Temporada 4</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GRID DE EPISÓDIOS ===== -->
+  <main class="container" id="episodesGrid">
+    <div class="episodes-grid" id="gridContainer"></div>
+    <p class="no-results" id="noResults" style="display:none;">Nenhum episódio encontrado.</p>
+  </main>
+
+  <!-- ===== MODAL DO PLAYER ===== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModalBtn()">✕</button>
+      <div class="modal-player">
+        <iframe
+          id="modalIframe"
+          src=""
+          title="Player de Episódio"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <div class="modal-meta">
+          <span id="modalSeason"></span>
+          <span id="modalViews"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SOBRE ===== -->
+  <section class="about-section" id="sobre">
+    <div class="container">
+      <h2 class="section-title">Sobre a Série</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">🎬</div>
+          <h3>Criação</h3>
+          <p>Criada por Chris Rock e Ali LeRoi, baseada na infância real de Chris Rock no Brooklyn, Nova York.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">📺</div>
+          <h3>Exibição</h3>
+          <p>Exibida originalmente pela UPN (2005–2006) e The CW (2006–2009). No Brasil, pelo Comedy Central.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🏆</div>
+          <h3>Prêmios</h3>
+          <p>Vencedora do NAACP Image Award e indicada ao Golden Globe de Melhor Série de Comédia.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">👨‍👩‍👧‍👦</div>
+          <h3>Elenco</h3>
+          <p>Tyler James Williams, Terry Crews, Tichina Arnold, Tequan Richmond e Imani Hakim.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2024 ChrisTV — Site de fãs dedicado à série <strong>Todo Mundo Odeia o Chris</strong>.</p>
+      <p>Os vídeos são de propriedade de seus respectivos canais no YouTube.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
